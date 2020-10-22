@@ -18,3 +18,5 @@ setOccupancy(map, occ)
 figure
 show(map)
 title('Warehouse Floor Plan')
+
+%test

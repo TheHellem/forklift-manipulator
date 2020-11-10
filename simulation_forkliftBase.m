@@ -70,7 +70,7 @@ end
 % Plottefunksjonen til Corke er bugga, fant alternativ løsning
 
 helperViz = HelperUtils;
-
+% 
 figure(1)
 planner.plot(); hold on
 title('Initial Route to Package')
@@ -87,6 +87,10 @@ numReadings = rangefinder.NumReadings;
 
 % Setup visualization.
 helperViz = HelperUtils;
+
+v = VideoWriter('base_sim.avi');
+open(v);
+
 figure(2)
 show(estMap)
 hold on
@@ -112,6 +116,8 @@ while idx <= size(poses,1)
     show(estMap, 'FastUpdate', true);
     helperViz.updateWorldMap(robotPatch, rangesLine, traveledLine, ...
         poses(idx,:), ranges, angles)
+    frame = getframe(gcf)
+    writeVideo(v,frame);
     drawnow
     
     % Regenerate route when obstacles are detected in the current one.
@@ -140,3 +146,5 @@ while idx <= size(poses,1)
         idx = idx + 1;
     end
 end
+
+close(v);

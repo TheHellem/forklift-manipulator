@@ -1,3 +1,5 @@
 # forklift-manipulator
 Robotics course semester project code
-![](gifavrobotarm.gif)
+
+Animasjon av robot armen: https://youtu.be/XcspdaYHjw0
+

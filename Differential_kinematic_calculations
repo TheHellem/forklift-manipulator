@@ -1,0 +1,104 @@
+clear all
+import ETS3.*
+%startup_rvc 
+syms q1 q2 q3 q4 q5
+%Here is meter used in order to get the right measures
+links = [
+	Revolute('d', 0.03, 'alpha', -pi/2)
+    Revolute('a', -0.1, 'alpha', pi)
+	Revolute('a', -0.1)
+	Revolute('a', -0.1)
+	Revolute('a', -0.1)
+	]
+five_link = SerialLink(links, 'name', 'forklift');
+T = five_link.fkine([q1 q2 q3 q4 q5]);
+TE =[pi pi pi/4 -pi/4 0];
+
+disp('vellipse1')
+q0 = [0 pi -pi/4 -pi/4 pi/2];
+m = five_link.maniplty(q0)
+five_link.maniplty(q0)
+J0 = five_link.jacob0([0 pi -pi/4 -pi/4 pi/2]) %The Jacobian computed by the method jacob0 
+JN = five_link.jacobe([0 pi -pi/4 -pi/4 pi/2]) %spatial velocity in the end-effector coordinate frame 
+null(J0)
+null(JN)
+rank(J0)
+rank(JN)
+jsingu(J0)
+cond(J0)
+view(3)
+five_link.plot([0 pi -pi/4 -pi/4 pi/2]);
+hold on
+five_link.vellipse([0 pi -pi/4 -pi/4 pi/2], 'trans'); grid on;
+tau = five_link.jacob0([0 pi -pi/4 -pi/4 pi/2])'*[0 1.96 0 0 0 0]' %force of 1.96 N in the world y-direction results in joint torques of
+qd = pinv(J0)*[0 0 0.2 0 0 0]' %Required joint velocity in the x-direction
+x = J0*qd
+hold off
+
+pause
+
+disp('vellipse2')
+view(3)
+five_link.plot([0 pi pi/4 -pi/4 0]);
+m = five_link.maniplty([0 pi pi/4 -pi/4 0])
+five_link.maniplty([0 pi pi/4 -pi/4 0])
+hold on
+five_link.vellipse([0 pi pi/4 -pi/4 0], 'trans'); grid on;
+tau = five_link.jacob0([0 pi pi/4 -pi/4 0])'*[0 1.96 0 0 0 0]'
+J0 = five_link.jacob0([0 pi pi/4 -pi/4 0]) %The Jacobian computed by the method jacob0
+JN = five_link.jacobe([0 pi pi/4 -pi/4 0]) %spatial velocity in the end-effector coordinate frame 
+qd = pinv(J0)*[0 0 0.2 0 0 0]' %Required joint velocity in the x-direction
+x = J0*qd
+null(J0)
+null(JN)
+rank(J0)
+rank(JN)
+jsingu(J0)
+cond(J0)
+hold off
+
+pause
+
+disp('vellipse3')
+TE=[pi pi pi/4 -pi/4 0]
+m = five_link.maniplty([pi pi pi/4 -pi/4 0])
+five_link.maniplty([pi pi pi/4 -pi/4 0])
+view(3)
+five_link.plot([pi pi pi/4 -pi/4 0]);
+hold on
+five_link.vellipse([pi pi pi/4 -pi/4 0], 'trans'); grid on;
+tau = five_link.jacob0([pi pi pi/4 -pi/4 0])'*[0 1.96 0 0 0 0]'
+J0 = five_link.jacob0([pi pi pi/4 -pi/4 0]) %The Jacobian computed by the method jacob0 
+JN = five_link.jacobe([pi pi pi/4 -pi/4 0]) %spatial velocity in the end-effector coordinate frame 
+qd = pinv(J0)*[0 0 0.2 0 0 0]' %Required joint velocity in the x-direction
+x = J0*qd
+null(J0)
+null(JN)
+rank(J0)
+rank(JN)
+jsingu(J0)
+cond(J0)
+hold off
+
+pause
+
+disp('vellipse4')
+q1 = [pi pi -pi/4 pi/4 0];
+m = five_link.maniplty(q1)
+five_link.maniplty(q1)
+view(3)
+five_link.plot([pi pi -pi/4 pi/4 0]);
+hold on
+five_link.vellipse([pi pi -pi/4 pi/4 0], 'trans'); grid on;
+tau = five_link.jacob0([pi pi -pi/4 pi/4 0])'*[0 1.96 0 0 0 0]'
+J0 = five_link.jacob0([pi pi -pi/4 pi/4 0]) %The Jacobian computed by the method jacob0 
+JN = five_link.jacobe([pi pi -pi/4 pi/4 0]) %spatial velocity in the end-effector coordinate frame 
+qd = pinv(J0)*[0 0 0.2 0 0 0]' %Required joint velocity in the x-direction
+x = J0*qd
+null(J0)
+null(JN)
+rank(J0)
+rank(JN)
+jsingu(J0)
+cond(J0)
+hold off

@@ -22,6 +22,9 @@ The following pictures depict how the scrips were used to simulate the robots mo
 
 ![Simulation of the mobile base](https://github.com/henrik-h-42/forklift-manipulator/blob/main/animation.gif)
 
+Unfortunately the landmark() function from Peter Corke's toolbax did not work together with an Occupancy map in 
+matlab. But a sensor was implemented to depict how the mobile base could scan for landmarks.
+
 
 
 

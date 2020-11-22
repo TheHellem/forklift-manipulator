@@ -13,7 +13,7 @@ The following link shows how the scripts can be used to simulate the robot arm w
 
 
 An additonal animation is also been made where it is simulated that the forklift is moving under the pallet, picking it up, moving, putting the pallet at a shelf, and finally pull away from the pallet.
-[![An addition animation of the robot arm](https://img.youtu.be/Nd98sdwXui4.jpg)(https://youtu.be/Nd98sdwXui4)
+[![An addition animation of the robot arm](https://youtu.be/Nd98sdwXui4)
 
 
 ### Simulation of The Forklifts Mobile Base

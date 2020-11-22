@@ -1,11 +1,13 @@
 %Since the arm is an under-actuated system, the determinant can not be calculated. Therefore, the manipulability and condition number is
-%calculated in order to say something about the singularity and condition of the pose. 
+%calculated in order to say something about the singularity and condition of the pose. As well, the null space is checked in order to know
+%if some configurations will give zero velocity in the end-effector. 
 
 clear all
 import ETS3.*
 %startup_rvc 
 syms q1 q2 q3 q4 q5
-%Here is meter used in order to get the right measures
+%Here is meter used in order to get the right measures of the torque and end-effector velocity. 
+%The other measures is still calculated with mm. 
 links = [
 	Revolute('d', 0.03, 'alpha', -pi/2)
     Revolute('a', -0.1, 'alpha', pi)

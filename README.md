@@ -7,7 +7,7 @@ This repository consists of most of the matlab scripts used in our semester proj
 
 The scripts are used to simulate the robotic arm, and calculate the forward and inverse kinematics of the robot arm as well as the differential kinematics.
 
-The following link shows how the scripts can be used to simulate the robot arm.
+The following link shows how the scripts can be used to simulate the robot arm with joint space motion planning.
 
 [![Animation of the Robot arm](https://img.youtube.com/vi/XcspdaYHjw0/0.jpg)](https://www.youtube.com/watch?v=XcspdaYHjw0&)
 

@@ -1,3 +1,6 @@
+%Since the arm is an under-actuated system, the determinant can not be calculated. Therefore, the manipulability and condition number is
+%calculated in order to say something about the singularity and condition of the pose. 
+
 clear all
 import ETS3.*
 %startup_rvc 

@@ -7,9 +7,14 @@ This repository consists of most of the matlab scripts used in our semester proj
 
 The scripts are used to simulate the robotic arm, and calculate the forward and inverse kinematics of the robot arm as well as the differential kinematics.
 
-The following link shows how the scripts can be used to simulate the robot arm with joint space motion planning.
+The following link shows how the scripts can be used to simulate the robot arm with joint space motion planning. Where it is simulated that the forklift os picking up a pallet, and then put it on a shelf. 
 
 [![Animation of the Robot arm](https://img.youtube.com/vi/XcspdaYHjw0/0.jpg)](https://www.youtube.com/watch?v=XcspdaYHjw0&)
+
+
+An additonal animation is also been made where it is simulated that the forklift is moving under the pallet, picking it up, moving, putting the pallet at a shelf, and finally pull away from the pallet.
+[![An addition animation of the robot arm](https://img.youtu.be/Nd98sdwXui4.jpg)(https://youtu.be/Nd98sdwXui4)
+
 
 ### Simulation of The Forklifts Mobile Base
 

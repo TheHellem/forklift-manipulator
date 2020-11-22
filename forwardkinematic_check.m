@@ -1,4 +1,4 @@
-%Sjekker om den utregnede forward kinematics stemmer overens med det toolboxen regner ut
+%A check done to see if the calculated forward kinematics is equal to what the toolbox is calculating.
 clear all
 import ETS3.*
 syms q1 q2 q3 q4

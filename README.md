@@ -15,7 +15,7 @@ The following link shows how the scripts can be used to simulate the robot arm.
 
 The following pictures depict how the scrips were used to simulate the robots mobile base. 
 
-
+![Simulation of the mobile base](https://github.com/henrik-h-42/forklift-manipulator/blob/main/animation.gif)
 
 
 

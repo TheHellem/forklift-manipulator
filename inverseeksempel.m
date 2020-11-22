@@ -3,7 +3,7 @@
 %pallet as described in the section conserning sensory system.
 
 clear all
-import ETS3.*  %Importerer pakke som tillater transformasjoner i 3D
+import ETS3.*  %Imports package which allows for transformations in 3D space
 
 syms q1 q2 q3 q4 q5;
 q = [q1 q2 q3 q4 q5];
@@ -12,11 +12,11 @@ a = [0 -100 -100 -100 -100];
 alpha = [-pi/2 pi 0 0 0];
 
 for i = 1:5
-    L(i) = Link([0 d(i) a(i) alpha(i)]); %Lager DH-parameter-tabell
+    L(i) = Link([0 d(i) a(i) alpha(i)]); %Makes DH-parameter table
 end
 
-robot = SerialLink(L, "name", "robotarm") %Definerer roboten
-q_start = [0.440 0.880  1.868 -0.387 -0.586];  %Definerer joints q1,q2,q3,q4,q5 (radians)
+robot = SerialLink(L, "name", "robotarm") %Defines the robot
+q_start = [0.440 0.880  1.868 -0.387 -0.586];  %Defines joints q1,q2,q3,q4,q5 (radians)
 forkine = robot.fkine(q_start) %Forward kinematics
 
 % forkine = [0.9046 -0.0136 -0.4259 -272.5;...
